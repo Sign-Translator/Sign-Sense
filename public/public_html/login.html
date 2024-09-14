@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"> -->
+    <link rel="shortcut icon" href="SignSense.png" type="image/x-icon">
+    <title>Sign Sense</title>
+</head>
+<body>
+    <div class="container" id="container">
+        <div class="form-container sign-up">
+            <form>
+                <h1 style="margin-bottom:25px;">Create Account</h1>
+                <div>
+                    <img class="icon" src="user.jpg">
+                    <input type="text" placeholder="Name" id="name" required>
+                </div>
+                <div>
+                    <img class="icon" src="email.jpg">
+                    <input type="email" name="email" class="email" id="email" required placeholder="E-Mail"><br>
+                </div>
+                <div>
+                    <img class="icon" src="password.png">
+                    <input type="password" name="pass" id="pass" class="password" required placeholder="Password">
+                    <img src="eye-close.png" class="eye-icon" alt="eye-close">
+                </div>
+                <div>
+                    <img class="icon" src="password.png">
+                    <input type="password" name="conformpass" id="conformpass" class="conformpass" required placeholder="Conform Password">
+                    <img src="eye-close.png" class="eye-icon" alt="eye-close">
+                </div>
+
+                <div id="error-message" class="error-message"></div>
+                <button type="submit">Sign Up</button>
+                <span>Or</span>
+            </form>
+            <button id="google-btn"><img src="google.jpg" class="google-icon"></button>
+        </div>
+        <div class="form-container sign-in">
+            <form>
+                <h1 style="margin-bottom:25px;">Sign In</h1>
+                <div>
+                    <img class="icon" src="user.jpg">
+                    <input type="email" name="email" class="email" id="email" required placeholder="E-Mail"><br>
+                </div>
+                <div>
+                    <img class="icon" src="password.png">
+                    <input type="password" name="pass" id="pass" class="password" required placeholder="Password">
+                    <img src="eye-close.png" class="eye-icon" alt="eye-close">
+                </div>
+                <label id="forgotPasswordLink">Forget Your Password?</label>
+                <button type="submit">Sign In</button>
+                <span>Or</span>
+            </form>
+            <button id="google-btn"><img src="google.jpg" class="google-icon signin"></button>
+            <div class="form-container reset-password" id="resetPasswordForm">
+                <form>
+                    <h1>Reset Password</h1>
+                    <div>
+                        <img class="icon" src="email.jpg">
+                        <input type="email" id="resetEmail" placeholder="Enter your email" required>
+                    </div>
+                    <div id="resetMessage" class="message"></div>
+                    <button type="button" id="resetPasswordBtn">Send Reset Email</button>
+                </form>
+            </div>
+        </div>
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-panel toggle-left">
+                    <button class="hidden" id="login"><img class="images" src="sign.jpg"></button>
+                </div>
+                <div class="toggle-panel toggle-right">
+                    <button class="hidden" id="register"><img class="images" src="SignSense.png" style="position:absolute; top: 0; left: -5%; height: 100%;"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="firebase.js"></script>
+    <script type="module" src="login_firebase.js"></script>
+    <script src="login.js"></script>
+</body>
+</html>

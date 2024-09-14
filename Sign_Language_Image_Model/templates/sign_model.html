@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Language Translator</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sign_model.css') }}">
+</head>
+<body>
+
+    <div class="main_content" id="mainContent">
+      <nav>
+        <div class="nav__header">
+          <div class="nav__logo">
+            <a href="https://indiansignlanguage.org/" target="_blank" class="logo">
+              <img src="{{ url_for('static', filename='images/assets/SignSense.png') }}" alt="" style="height: 70px;width: 100px;">
+            </a>
+          </div>
+          <div class="nav__menu__btn" id="menu-btn">
+            <i class="ri-menu-line"></i>
+          </div>
+        </div>
+        <ul class="nav__links" id="nav-links">
+          <li><a href="http://localhost:3000/home.html#home">Home</a></li>
+          <li><a href="http://127.0.0.1:4000/">Translator</a></li>
+          <li><a href="http://localhost:3000/home.html#blogs">Blogs</a></li>
+          <li><a href="http://localhost:3000/home.html#about">About</a></li>
+          <li><a href="http://localhost:3000/home.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="translator">
+        <h1>Sign Language Translator</h1>
+        <form method="POST">
+            <input type="text" name="sentence" placeholder="Enter a sentence" required>
+            <button type="submit">Translate</button>
+        </form>
+      </div>
+      <div class="images"></div>
+          {% if sentence %}
+              <div class="gen_images">
+                  {% for image in images %}
+                      <img src="{{ url_for('static', filename=image) }}" alt="Sign Language Image" style="width: 200px; height: 200px;">
+                  {% endfor %}
+              </div>
+          {% endif %}
+      </div>
+    <footer class="footer" id="contact">
+      <ul class="footer__socials">
+        <li>
+          <a href="mailto:lokeshsuryaprakashk@gmail.com" target="_blank" aria-label="Gmail"><i class="ri-mail-line"></i></a>
+        </li>
+        <li>
+          <a href="http://localhost:3000/www.linkedin.com/in/lokesh-surya-prakash-konduboyena-2b556726b" target="_blank" aria-label="LinkedIn"><i class="ri-linkedin-fill"></i></a>
+        </li>
+        <li>
+          <a href="#" target="_blank" aria-label="Facebook"><i class="ri-facebook-fill"></i></a>
+        </li>
+        <li>
+          <a href="#" target="_blank" aria-label="Instagram"><i class="ri-instagram-line"></i></a>
+        </li>
+      </ul>
+      <div class="section__container footer__container">
+        <div class="footer__col">
+          <div class="footer__logo">
+            <a href="#home" class="logo">Sign Sense</a>
+          </div>
+          <p>Join us in breaking barriers and making communication between deaf and hearing people easy.</p>
+        </div>
+        <div class="personal_details">
+          <div class="details ">
+            <img src="{{ url_for('static', filename='images/assets/lokesh.jpg') }}">
+            <h3>Prakash</h3>
+            <div class="details_links">
+              <a href="mailto:lokeshsuryaprakashk@gmail.com" target="_blank">lokeshsuryaprakashk@gmail.com</a>
+              <a href="tel:+916303642297">6303642297</a>
+            </div>
+          </div>
+          <div class="details ">
+            <img src="{{ url_for('static', filename='images/assets/prithvi.jpg') }}">
+            <h3>Madivada Prithvi</h3>
+            <div class="details_links">
+              <a href="mailto:madivadapr@gmail.com" target="_blank">madivadapr@gmail.com</a>
+              <a href="tel:+918309466413">8309466413</a>
+            </div>
+          </div>
+          <div class="details ">
+            <img src="{{ url_for('static', filename='images/assets/azeez.jpeg') }}">
+            <h3>Mahammad Abdul Azeez</h3>
+            <div class="details_links">
+              <a href="mailto:22pa1a0592@vishnu.edu.in" target="_blank">22pa1a0592@vishnu.edu.in</a>
+              <a href="tel:+917989332944">7989332944</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer__col">
+        <ul class="footer__links">
+          <li><a href="http://localhost:3000/home.html#home">Home</a></li>
+          <li><a href="http://127.0.0.1:4000/">Translator</a></li>
+          <li><a href="http://localhost:3000/home.html#blogs">Blogs</a></li>
+          <li><a href="http://localhost:3000/home.html#about">About</a></li>
+          <li><a href="http://localhost:3000/home.html#contact">Contact</a></li>
+          <li><a href="http://localhost:3000/home.htmldemo.html">Demo</a></li>
+        </ul>
+      </div>
+      <div class="footer__bar">
+        <p>Copyright © 2024 Sign Sense. All rights reserved.</p>
+      </div>
+    </footer>
+    
+      <script src="https://unpkg.com/scrollreveal"></script>
+      <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+      <script src="{{url_for('static', filename='js/sign_model.js')}}"></script>
+</body>
+</html>
